@@ -39,6 +39,7 @@ const XDictionary = () => {
       <div>
         <input
           placeholder="Search for a word..."
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
