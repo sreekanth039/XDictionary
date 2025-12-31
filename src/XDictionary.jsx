@@ -19,9 +19,12 @@ const XDictionary = () => {
   const handleSearch = (e) => {
     e.preventDefault();
 
-    const found = input.trim().toLowerCase();
+    const found = input.trim();
+    if (!found) return;
 
-    const filter = Dictionary.find((item) => item.word.toLowerCase() === found);
+    const filter = Dictionary.find(
+      (item) => item.word.toLowerCase() === found.toLowerCase()
+    );
 
     if (filter) {
       setDefinition(filter.meaning);
